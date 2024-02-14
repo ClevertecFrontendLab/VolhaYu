@@ -1,0 +1,168 @@
+#root {
+    width: 1440px;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+:global(.ant-layout) {
+    background: url('../../../public/main_page_light.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.mainLayout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sider {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 30px;
+}
+
+:global(.ant-menu-inline .ant-menu-item:not(:last-child)) {
+  margin-bottom: 16px;
+}
+
+:global(.ant-layout-sider-children) {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapExit {
+  width: 100%;
+  height: 42px;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.exit {
+  display: flex;
+  padding: 0 16px;
+}
+.layoutContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header {
+  height: 168px;
+  background: #f0f5ff;
+  padding: 16px 24px;
+}
+
+.content {
+  padding: 24px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTextBlue, .cardTextBlack {
+  border-radius: 2px;
+  width: 752px;
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #061178;
+}
+
+.cardTextBlack {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #262626;
+}
+
+.wrapCards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.wrapDounload {
+  margin-top: auto;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  }
+
+  :global(.ant-card-meta-title) {
+    color: #2f54eb;
+  }
+  :global(.ant-btn-link) {
+    color: #2f54eb;
+  }
+.footer {
+  padding: 0 15px;
+  background: transparent;
+  height: 42px;
+}
+
+@media(max-width: 1100px) {
+  .cardTextBlue, .cardTextBlack {
+    width: 578px;
+  }
+}
+
+@media(max-width: 835px) {
+  .header {
+    height: 194px;
+  }
+  .cardTextBlue, .cardTextBlack {
+    width: 100%;
+    max-width: 100%;
+  }
+  .wrapCards {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: start;
+  }
+}
+
+@media(max-width: 640px) {
+  
+  .wrapCards {
+    justify-content: center;
+    gap: 8px;
+  }
+  .wrapDounload {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btnReview {
+    order: 2;
+  }
+}
+
+@media(max-width: 576px) {
+  :global(.ant-menu-inline .ant-menu-item:not(:last-child)) {
+    padding: 0 8px;
+  }
+  .sider {
+    position: fixed;
+    z-index: 2;
+    height: 100%;
+  }
+  .header {
+    height: 166px;
+  }
+  .content {
+    padding: 24px 16px;
+    padding-bottom: 0;
+  }
+  :global(.ant-card-body) {
+    padding: 16px;
+  }
+}

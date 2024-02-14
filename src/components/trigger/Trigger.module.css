@@ -1,0 +1,21 @@
+.trigger {
+  width: 20px;
+  height: 66px;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 20%, 100% 82%, 0 100%);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 52%;
+  right: -20px;
+  z-index: 1;
+}
+
+@media(max-width: 576px) {
+  .trigger {
+    width: 32px;
+    height: 48px;
+    top: 24px;
+    right: -31px;
+  }
+}

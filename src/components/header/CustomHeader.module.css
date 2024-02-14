@@ -1,0 +1,35 @@
+.text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 130%;
+  margin-bottom: 14px;
+  padding: 0;
+}
+.h1 {
+  font-weight: 700;
+  font-size: 38px;
+  margin: 0;
+  max-width: 100%;
+}
+
+@media(max-width: 1300px) {
+  .h1 {
+    font-size: 28px;
+  }
+}
+@media(max-width: 835px) {
+
+  .h1 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+}
+
+@media(max-width: 640px) {
+  .text {
+    margin-bottom: 6px;
+  }
+  .h1 {
+    font-size: 20px;
+  }
+}
