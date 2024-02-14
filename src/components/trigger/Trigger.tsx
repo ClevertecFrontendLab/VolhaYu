@@ -14,7 +14,7 @@ export const Trigger = ({isCollapsed, setIsCollapsed}: ITrigger) => {
       className={styles.trigger} 
       data-test-id={width > 360 ? 'sider-switch' : 'sider-switch-mobile'}
     >
-      {!isCollapsed ? <MenuFoldOutlined /> : <MenuUnfoldOutlined />}
+      {!isCollapsed ? <MenuFoldOutlined style={{color: '#8c8c8c'}} /> : <MenuUnfoldOutlined style={{color: '#8c8c8c'}} />}
     </div>
   )
 }

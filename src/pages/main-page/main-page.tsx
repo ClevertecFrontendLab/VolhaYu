@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import logo from '/logo.svg';
 import exit from '/Exit.svg';
@@ -23,6 +23,18 @@ export const MainPage: React.FC = () => {
   const width = useResize()
   const isMobile = width <= 576
 
+  const heigthHeader = useMemo(() => {
+    if (width > 834) {
+      return 168
+    } else if (width > 772 && width < 835 && isCollapsed) {
+      return 132
+    } else if(width <=576) {
+      return 166
+    } else {
+      return 194
+    }
+  }, [isCollapsed, width])
+
     return (
         <Layout hasSider className={styles.mainLayout}>
               <Sider 
@@ -46,14 +58,14 @@ export const MainPage: React.FC = () => {
                 <div className={styles.wrapExit}>
                   <Divider style={{margin: 0}}/>
                   <div className={styles.exit}>
-                    {!isMobile && <img src={exit} alt="exit" />}
+                    {!isMobile && <img src={exit} alt="exit" style={{marginRight: 10}} />}
                     <Button type="text">{ !isCollapsed && 'Выход'}</Button>
                   </div>
                 </div>
               </Sider>
             <Layout className={styles.layoutContent}>
 
-              <Header style={{height: (width <= 834 && width > 772  && isCollapsed) ? 132 : 194}} className={styles.header}>
+              <Header style={{height: heigthHeader}} className={styles.header}>
                 <CustomHeader />
               </Header>
               <Content className={styles.content}>
@@ -80,9 +92,9 @@ export const MainPage: React.FC = () => {
                   </p>
                 </Card>
                 <div className={styles.wrapCards}>
-                  <CustomCard title={'Расписать тренировки'} text={'Тренировки'} icon={<HeartFilled style={{color: '#061178'}} />}  />
-                  <CustomCard title={'Назначить календарь'} text={'Календарь'} icon={<CalendarTwoTone twoToneColor={['#061178', '#061178']}/>} />
-                  <CustomCard title={'Заполнить профиль'} text={'Профиль'} icon={<IdcardOutlined style={{color: '#061178'}} />} />
+                  <CustomCard title={'Расписать тренировки'} text={'Тренировки'} icon={<HeartFilled style={{ color: '#2f54eb' }} />} isCollapsed={isCollapsed}  />
+                  <CustomCard title={'Назначить календарь'} text={'Календарь'} icon={<CalendarTwoTone twoToneColor={['#2f54eb', '#2f54eb']}/>} isCollapsed={isCollapsed}  />
+                  <CustomCard title={'Заполнить профиль'} text={'Профиль'} icon={<IdcardOutlined style={{color: '#2f54eb'}} />} isCollapsed={isCollapsed}  />
                 </div>
                 <div className={styles.wrapDounload}>
                   <Button className={styles.btnReview} type='link'>Смотреть отзывы</Button>
