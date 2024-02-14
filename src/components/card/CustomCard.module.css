@@ -8,14 +8,17 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 .actions {
   border-top: 1px solid #f0f0f0;
   height: 56px;
 }
+
 :global(.ant-card-head) {
   padding: 0;
   padding-left: 24px;
 }
+
 :global(.ant-card-head-title) {
   padding: 12px 0;
   white-space: wrap;
